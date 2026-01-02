@@ -1,0 +1,209 @@
+body {
+  font-family: "Inter", sans-serif;
+  background: #f8f9fb;
+  padding: 30px;
+  color: #333;
+}
+
+.post-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px 25px;
+  max-width: 650px;
+  margin: auto;
+}
+
+.urgent-badge {
+  background: #e11d48;
+  color: white;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 14px;
+}
+
+.deadline {
+  background: #f3f4f6;
+  color: #555;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 50px;
+  margin-left: 8px;
+}
+
+.post-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 15px;
+  line-height: 1.4;
+}
+/* --- Bố cục ảnh bên trái, mô tả bên phải --- */
+.post-body {
+  display: flex;
+  align-items: flex-start; /* canh trên cùng */
+  gap: 20px; /* khoảng cách giữa ảnh và mô tả */
+  margin: 15px 0;
+}
+
+/* ảnh bên trái */
+.post-body .post-image {
+  width: 45%; /* ảnh chiếm 45% chiều rộng */
+  height: 250px; /* cố định chiều cao */
+  object-fit: cover; /* cắt ảnh vừa khung */
+  border-radius: 10px;
+}
+
+/* mô tả bên phải */
+.post-body .post-content {
+  width: 55%;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.post-meta {
+  color: #666;
+  font-size: 13px;
+  margin: 8px 0 15px;
+}
+
+.post-image {
+  width: 100%;
+  max-height: 300px; /* Giới hạn chiều cao tối đa */
+  object-fit: cover; /* Cắt ảnh cho vừa khung, không méo */
+  border-radius: 10px;
+  margin: 10px 0 15px;
+}
+
+.post-content {
+  line-height: 1.6;
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.contact {
+  font-weight: 600;
+  color: #1e40af;
+}
+
+.tags {
+  margin-top: 15px;
+}
+
+.tag {
+  display: inline-block;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 13px;
+  padding: 5px 12px;
+  border-radius: 50px;
+  margin-right: 6px;
+}
+
+.share {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #555;
+}
+
+.share a {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+.share a:hover {
+  text-decoration: underline;
+}
+
+.comment-section {
+  margin-top: 25px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 15px;
+}
+
+.comment-title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.no-comment {
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.comment-item {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.comment-input {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-top: 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.comment-button {
+  background: #1d4ed8;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.comment-button:hover {
+  background: #2563eb;
+}
+.map {
+  height: 300px;
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+a {
+  text-decoration: none;
+}
+/* ---- NÚT ---- */
+.formbold-form-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.formbold-btn {
+  background-color: #b1ddab;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.formbold-btn:hover {
+  background-color: #2fa739;
+}
+
+.formbold-back-btn {
+  background: #fff;
+  border: none;
+  color: #07074d;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}

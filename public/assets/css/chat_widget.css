@@ -1,0 +1,251 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f1f5f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Nút chat nổi === */
+#chat-button {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg, #1d7611, #0b4713);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+  z-index: 9999;
+}
+
+.chat-icon i {
+  font-size: 28px;
+  color: white;
+}
+
+#chat-button:hover {
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+#chat-button.active {
+  transform: rotate(180deg) scale(1.1);
+  background: #ef4444;
+}
+
+/* === Hộp chat === */
+#chat-box {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 320px;
+  height: 420px; /* 👈 tăng nhẹ để chứa cả câu hỏi */
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fadeUp 0.4s ease forwards;
+  z-index: 999999;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Header */
+.chat-header {
+  background: linear-gradient(135deg, #1d7611, #0b4713);
+  color: white;
+  font-weight: bold;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+.chat-header button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.chat-header button:hover {
+  transform: rotate(90deg);
+}
+
+/* Tin nhắn + câu hỏi */
+#chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Câu hỏi thường gặp nằm trong hộp chat */
+
+.quick-title {
+  font-weight: 600;
+  font-size: 13px;
+  margin-top: 0;
+  margin-bottom: 8px;
+  text-align: center;
+  color: #444;
+}
+
+.quick-btn {
+  display: block;
+  width: 100%;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 7px 10px;
+  margin-bottom: 5px;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 13px;
+  color: #333;
+}
+
+.quick-btn:hover {
+  background: #158924;
+  color: white;
+  border-color: #a2d39c;
+}
+
+.message {
+  display: flex;
+  /* CĂN CHỈNH: Đảm bảo bubble và avatar nằm trên cùng một đường ngang */
+  /* align-items: flex-end; là chuẩn, giữ tin nhắn luôn căn đáy */
+  align-items: flex-end;
+  gap: 10px;
+  animation: popIn 0.3s ease;
+}
+
+.message .bubble {
+  padding: 10px 14px;
+  border-radius: 18px;
+  max-width: 75%;
+  word-wrap: break-word;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- AVATAR BASE STYLE (SỬ DỤNG CLASS CỦA BẠN) --- */
+/* Thêm style để định nghĩa hình tròn avatar và CĂN GIỮA ICON */
+.avatar {
+  /* Kích thước hình tròn */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  /* CĂN GIỮA NỘI DUNG (ICON/EMOJI) */
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+
+  /* Styling Icon/Emoji */
+  background-color: #e2e8f0; /* Màu nền cho hình tròn */
+  font-size: 20px; /* Kích thước phù hợp cho Emoji/Icon */
+  flex-shrink: 0;
+}
+
+/* --- CĂN CHỈNH CÁC KHỐI TIN NHẮN RIÊNG LẺ --- */
+
+.user {
+  justify-content: flex-end;
+  /* Chuyển sang flex-end để avatar người dùng ở dưới cùng */
+  align-items: flex-end;
+}
+
+.user .bubble {
+  background: #dbeafe;
+  color: #1e3a8a;
+  border-bottom-right-radius: 4px;
+}
+
+.bot {
+  justify-content: flex-start;
+  /* Chuyển sang flex-end để avatar bot ở dưới cùng */
+  align-items: flex-end;
+}
+
+.bot .bubble {
+  background: #dcfce7;
+  color: #166534;
+  border-bottom-left-radius: 4px;
+}
+
+/* Input */
+.chat-input {
+  display: flex;
+  border-top: 1px solid #e5e7eb;
+  background: white;
+}
+
+.chat-input input {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.chat-input button {
+  background: #a2d39c;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-weight: bold;
+  border-top-right-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.chat-input button:hover {
+  background: #166534;
+}
+
+/* === Hiệu ứng === */
+@keyframes fadeUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.rotate {
+  transform: rotate(360deg);
+  transition: transform 0.4s ease;
+}

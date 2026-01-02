@@ -1,0 +1,135 @@
+/* --- CSS CHO DROPDOWN AVATAR MỚI --- */
+
+/* Khối bao quanh Avatar + Tên + Dropdown */
+.profile-dropdown-container {
+  /* Đảm bảo khối là điểm neo (anchor) cho menu tuyệt đối */
+  position: relative;
+  cursor: pointer;
+  /* Hiển thị ngang hàng Avatar và Tên */
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  /* Căn chỉnh vị trí so với nút Đăng bài */
+  margin-left: 35px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.profile-dropdown-container:hover {
+  /* Tạo hiệu ứng nhẹ khi hover */
+  background-color: #f1f1f1;
+}
+
+/* Thông tin người dùng */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+/* Ảnh Avatar */
+.user-info .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+/* Hover/Active state cho Avatar */
+.profile-dropdown-container:hover .user-info .avatar {
+  border-color: #0b4713; /* Viền xanh lá đậm khi hover */
+}
+
+/* Menu thả xuống */
+.profile-dropdown-menu {
+  position: absolute;
+  /* Định vị ở dưới và bên phải của khối container */
+  top: 55px;
+  right: 0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  /* ĐIỀU CHỈNH 1: Giảm chiều rộng tối thiểu */
+  min-width: 220px;
+  z-index: 1000;
+  padding: 5px 0;
+
+  /* MẶC ĐỊNH ẨN */
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: visibility 0.2s, opacity 0.2s, transform 0.2s;
+}
+
+/* HIỆN KHI HOVER */
+.profile-dropdown-container:hover .profile-dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tiêu đề/Email */
+.menu-header {
+  padding: 10px 15px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.menu-header strong {
+  display: block;
+  color: #0b4713;
+  font-size: 16px; /* Tăng nhẹ font size cho tên */
+  margin-bottom: 3px;
+}
+
+.menu-header small {
+  text-transform: lowercase;
+  display: block; /* Đảm bảo email xuống dòng */
+  color: #666; /* Đảm bảo màu tối dễ đọc */
+}
+
+/* Các mục Menu */
+.menu-item a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  color: #4a4a4a;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: normal;
+
+  text-transform: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.menu-item a:hover {
+  background-color: #e9f8ee;
+  color: #0b4713;
+}
+
+/* Icon */
+.menu-item i {
+  width: 20px;
+  text-align: center;
+  color: #999;
+}
+
+.menu-item a:hover i {
+  color: #0b4713;
+}
+
+/* Tách đường Đăng xuất */
+.logout-item {
+  border-top: 1px solid #eee;
+  padding-top: 5px;
+  margin-top: 5px;
+}
