@@ -2635,7 +2635,7 @@ body {
 /* Banner */
 #banner {
   position: relative;
-  background-image: url("../../images/unnamed.jpg");
+  background-image: url("../../images/unnamed.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -2660,8 +2660,11 @@ body {
 .banner-button {
   position: absolute;
   z-index: 3;
-  bottom: 60px; /* Khoảng cách từ đáy */
-  left: 370px;
+  bottom: 80px; /* Khoảng cách từ đáy */
+  left: 37%; /* Đưa cạnh trái của nút ra giữa khung */
+  transform: translateX(
+    -50%
+  ); /* Dịch chuyển nút sang trái một nửa chiều rộng của nó để căn giữa */
   display: inline-block;
   padding: 15px 40px;
   background: #144bd6 !important;
@@ -2674,6 +2677,7 @@ body {
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap; /* Đảm bảo chữ không bị xuống dòng khi thu nhỏ quá đà */
 }
 
 .banner-button:hover {
@@ -2681,7 +2685,7 @@ body {
   color: #ffffff !important;
 
   border-color: #3bc12e;
-  transform: translateY(-1px);
+  transform: translateX(-50%) translateY(-5px);
 }
 /* Main */
 
