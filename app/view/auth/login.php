@@ -7,7 +7,7 @@
         $public_url = PUBLIC_URL;
     } else {
         // 2. Nếu chưa, dùng đường dẫn tuyệt đối tĩnh (truy cập trực tiếp)
-        $public_url = '/TEST_DACS2/public';
+        $public_url = '/DACS2/public';
     }
 
     // 3. Sử dụng biến $public_url đã được đảm bảo để tạo các đường dẫn tài nguyên
@@ -74,7 +74,7 @@
                     <div class="error-message" id="loginPasswordError"></div>
                 </div>
 
-                <a href="#">Quên mật khẩu?</a>
+                <a href="forgot_password.php">Quên mật khẩu?</a>
                 <button type="submit">Đăng Nhập</button>
                 <br>
                 <span>Hoặc đăng nhập bằng tài khoản mạng xã hội</span>

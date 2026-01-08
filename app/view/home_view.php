@@ -110,17 +110,16 @@
                       <div class="content">
                         <!-- Featured Post -->
                         <article class="box post">
-                          <header>
-                            <h3><a href="#">Tiêu đề</a></h3>
-                            <p>
+                                                        <h3><a href="#">Tiêu đề</a></h3>
+
+                            <p class="description">
                               mô tả ngắn gọn về bài viết để người đọc nắm được
                             </p>
-                          </header>
                           <p>
                             địa chỉ tỉnh <br />
                             danh mục<br />ngày đăng
                           </p>
-                          <a href="#" class="image featured"
+                          <a href="#" class="image blog"
                             ><img src="<?php echo PUBLIC_URL; ?>/images/pic05.jpg" alt=""
                           /></a>
 

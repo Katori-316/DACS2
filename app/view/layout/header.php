@@ -40,13 +40,95 @@
                 <a href="index.php?page=home" class="logo">
 <img src="<?php echo PUBLIC_URL; ?>/images/2.png" alt="Logo">
                 </a>
+    <div class="search-filter-group">
+        <form action="index.php" method="GET" class="group">
 
-                <div class="group">
-                    <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
-                        <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
-                    </svg>
-                    <input name="keyword" placeholder="Tìm kiếm..." type="search" class="input" />
+    <input type="hidden" name="page" value="search">
+
+    <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+        <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
+    </svg>
+
+    <input
+        name="keyword"
+        placeholder="Tìm kiếm theo tiêu đề, mô tả, địa điểm..."
+        type="search"
+        class="input"
+        value="<?php echo isset($_GET['keyword']) ? htmlspecialchars($_GET['keyword']) : ''; ?>"
+    />
+</form>
+
+            <!-- Nút lọc -->
+            <div class="filter-section">
+                <div class="filter-button" id="filterToggle">
+                    <i class="fa-solid fa-filter"></i>   Lọc
                 </div>
+
+                <!-- Dropdown filter -->
+                <div class="filter-dropdown" id="filterDropdown">
+                    <!-- ĐÃ THÊM div filter-grid để bao bọc các filter-item -->
+                    <div class="filter-grid">
+                         <div class="filter-item">
+                            <div class="filter-label">
+                                <i class="fa-solid fa-tag"></i> Loại bài
+                            </div>
+                            <select class="filter-select">
+                                <option value="">Tất cả loại bài</option>
+                                <option value="phone">Thất lạc</option>
+                                <option value="wallet">Nhặt được</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <div class="filter-label">
+                                <i class="fa-solid fa-tag"></i> Danh mục
+                            </div>
+                            <select class="filter-select">
+                                <option value="">Tất cả danh mục</option>
+                                <option value="phone">Điện thoại</option>
+                                <option value="wallet">Ví</option>
+                                <option value="key">Chìa khóa</option>
+                                <option value="document">Giấy tờ</option>
+                                <option value="pet">Thú cưng</option>
+                                <option value="other">Khác</option>
+                            </select>
+                        </div>
+
+                        <!-- Tỉnh/Thành phố -->
+                        <div class="filter-item">
+                            <div class="filter-label">
+                                <i class="fa-solid fa-location-dot"></i> Tỉnh/Thành
+                            </div>
+                            <select class="filter-select">
+                                <option value="">Tất cả tỉnh/thành</option>
+                                <option value="hanoi">Hà Nội</option>
+                                <option value="danang">Đà Nẵng</option>
+                                <option value="hcm">TP. Hồ Chí Minh</option>
+                            </select>
+                        </div>
+
+                        <!-- Ngày đăng -->
+                        <div class="filter-item">
+                            <div class="filter-label">
+                                <i class="fa-solid fa-calendar"></i> Ngày đăng
+                            </div>
+                            <div class="date-input-wrapper">
+                                <input type="date" class="filter-date" placeholder="dd/mm/yyyy">
+                            </div>
+                        </div>
+                    </div> <!-- Đóng filter-grid -->
+
+                    <!-- Nút hành động -->
+                    <div class="filter-actions">
+                        <button class="btn-filter-action btn-clear" type="button">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                        <button class="btn-filter-action btn-ok" id="applyFilter" type="button">
+                            <i class="fa-solid fa-check"></i>
+                        </button>
+                    </div>
+                </div> <!-- Đóng filter-dropdown -->
+            </div> <!-- Đóng filter-section -->
+        </div> <!-- Đóng search-filter-group -->
 
                 <div class="user-section">
                     <a href="index.php?page=post" class="button primary">+ Đăng bài</a>

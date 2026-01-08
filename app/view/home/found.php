@@ -1,61 +1,32 @@
 
       <section id="main">
         <div class="container">
+          <!-- BANNER MINIMAL -->
+        <div class="minimal-banner">
+            <div class="banner-content">
+                <h2 class="banner-title">🤝 Kết nối cộng đồng tìm đồ thất lạc</h2>
+                <div class="banner-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">1.248</div>
+                        <div class="stat-label">đồ vật đã được tìm thấy</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">520</div>
+                        <div class="stat-label">người được hỗ trợ</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">36</div>
+                        <div class="stat-label">tỉnh thành hoạt động</div>
+                    </div>
+                </div>
+<a href="index.php?page=post" class="banner-button green-version">Đăng tin nhặt đồ</a>            </div>
+        </div>
           <div class="row">
             <div class="col-9 col-12-medium">
               <div class="content">
                 <!-- Content -->
 
-                <article class="box page-content">
-                  <!-- Ô tìm kiếm vật mất -->
-                  <section class="search-container">
-                    <div class="search-box">
-                      <input
-                        type="text"
-                        id="searchInput"
-                        placeholder="Tìm kiếm theo tiêu đề, mô tả, địa điểm..."
-                        class="search-input"
-                      />
-                      <button id="searchBtn" class="search-btn">
-                        <i class="fa fa-search"></i> Tìm kiếm
-                      </button>
-                    </div>
 
-                    <div class="filter-bar">
-                      <div class="filter-group">
-                        <span class="dot green"></span>
-                        <label>Danh mục</label>
-                        <select>
-                          <option>Tất cả danh mục</option>
-                          <option>Giấy tờ tùy thân</option>
-                          <option>Điện thoại</option>
-                          <option>Ví tiền</option>
-                          <option>Khác</option>
-                        </select>
-                      </div>
-
-                      <div class="filter-group">
-                        <span class="dot purple"></span>
-                        <label>Tỉnh/Thành phố</label>
-                        <select>
-                          <option>Tất cả tỉnh/thành</option>
-                          <option>Hà Nội</option>
-                          <option>TP. Hồ Chí Minh</option>
-                          <option>Đà Nẵng</option>
-                          <option>Cần Thơ</option>
-                        </select>
-                      </div>
-                      <div class="filter-group">
-                       <span class="dot orange"></span> <label>Ngày đăng</label>
-                       <input
-                       type="date"
-                        class="filter-date"
-                       placeholder="dd/mm/yyyy"
-                                   />
-                                </div>
-                    </div>
-                  </section>
-                </article>
               </div>
             </div>
 
